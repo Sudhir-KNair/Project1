@@ -1,0 +1,41 @@
+select count(*) FROM countries
+where continent like '%africa%';
+
+select continent,round(sum(population),2) as 'Total Population' from population_years
+join
+countries
+on countries.id = population_years.country_id
+where continent like '%Oceania%' AND year = 2005
+group by continent;
+
+select continent,round(AVG(population),2) as 'Average Population' from  population_years
+join
+countries
+on countries.id = population_years.country_id
+where continent like '%South America%' AND year = 2003
+group by continent;
+
+Select name,min(population) from  population_years
+join
+countries
+on countries.id = population_years.country_id
+where  year = 2007;
+
+select name,round(AVG(population),2) as 'Average Population' from  population_years
+join
+countries
+on countries.id = population_years.country_id
+where name like '%Poland%'
+group by name;
+
+select count(*) FROM countries
+where name like '%The%';
+
+select continent,round(sum(population),2) as 'Total Population' from population_years
+join
+countries
+on countries.id = population_years.country_id
+where year = 2005
+group by continent;
+
+
