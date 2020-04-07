@@ -1,0 +1,43 @@
+-- This is the first query:
+
+SELECT DISTINCT year from population_years;
+
+-- Add your additional queries below:
+
+-- This is the first query:
+
+SELECT DISTINCT year from population_years;
+
+-- Add your additional queries below:
+SELECT * from population_years
+where country like '%Indonesia%';
+
+select Country,max(population) as 'Largest Population' from population_years
+where country = 'Gabon';
+
+Select country, population from population_years
+where year = 2005
+order by population ASC
+limit 10;
+
+Select * from population_years
+where population > 100 and year = 2010;
+
+Select count(*) from population_years
+where country like '%Islands%';
+
+SELECT * from population_years
+where country like '%Indonesia%';
+ 
+ SELECT population, year FROM population_years
+ WHERE country = 'Indonesia' 
+ AND year BETWEEN 2000 AND 2011
+ ORDER BY year asc;
+ 
+select population - (select population from population_years where country = 'Indonesia' and year = 2000) as 'Difference' from population_years where country = 'Indonesia' and year = 2010;
+
+SELECT year, population FROM population_years
+WHERE country = 'Indonesia'
+AND year = 2000
+OR country = 'Indonesia'
+AND year = 2010;
